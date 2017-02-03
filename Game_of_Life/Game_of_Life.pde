@@ -5,14 +5,14 @@ int scr_height=600;
 int element_size=(scr_width/size)*(scr_height/size)+1;
 void setup() {
   size(800, 600);
+  smooth();
   element=new GoL[element_size];
   for (int i=0; i<element_size; i++)
   {
-    if(i==0){
-    element[i]=new GoL(-1,-1,i, 0, size, 0, 'e', 'e', false);
-    }
-    else{
-    element[i]=new GoL((i%(scr_width/size)-1)*size+size/2,(ceil(i/(scr_width/size))-1)*size+size/2,i, 0, size, 0, 'e', 'e', false);
+    if (i==0) {
+      element[i]=new GoL(-1, -1, i, 0, size, 0, 'e', 'e', false);
+    } else {
+      element[i]=new GoL((i%(scr_width/size))*size+size/2, (ceil(i/(scr_width/size)))*size+size/2, i, 0, size, 0, 'e', 'e', false);
     }
   }
   initialize(element, element_size, 'b', 'f');
@@ -21,7 +21,7 @@ void setup() {
 }
 void draw() {
   background(255);
-  for(int i=1;i<element_size;i++){
+  for (int i=1; i<element_size; i++) {
     element[i].display();
   }
 }

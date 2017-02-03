@@ -14,7 +14,6 @@ class GoL {
     intelligence=tintelligence;
   }
   void display() {
-    smooth();
     if (type=='b') {
       noStroke();
       fill(0);
@@ -33,6 +32,7 @@ class GoL {
       strokeWeight(1);
     }
     if (type=='a') {
+      stroke(127);
       fill(102);
       beginShape();
       vertex(x-size/2, y);
