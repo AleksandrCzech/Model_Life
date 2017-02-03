@@ -12,6 +12,9 @@ void setup() {
   initialize(element, element_size, 'b', 's');
   initialize(element, element_size, 'p', 'e');
 }
+void draw() {
+  background(255);
+}
 void initialize(GoL[] el, int l, char t, char c)
 {
   int n=(l-1)/4;
