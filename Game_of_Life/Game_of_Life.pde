@@ -20,6 +20,7 @@ void initialize(GoL[] el, int l, char t, char c)
     if (el[curr].type=='e') {
       el[curr].type=t;
       el[curr].colony=c;
+      n--;
     }
   }
 }
