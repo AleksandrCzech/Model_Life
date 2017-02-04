@@ -12,7 +12,7 @@ void setup() {
     if (i==0) {
       element[i]=new GoL(-1, -1, i, 0, size, 0, 'e', 'e', false);
     } else {
-      element[i]=new GoL((i%(scr_width/size))*size+size/2, (ceil(i/(scr_width/size)))*size+size/2, i, 0, size, 0, 'e', 'e', false);
+      element[i]=new GoL(((i-1)%(scr_width/size))*size+size/2, (ceil((i-1)/(scr_width/size)))*size+size/2, i, 0, size, 0, 'e', 'e', false);
     }
   }
   initialize(element, element_size, 'b', 'f');
@@ -36,4 +36,10 @@ void initialize(GoL[] el, int l, char t, char c)
       n--;
     }
   }
+}
+void animalCreation(GoL[] el, int el_num, boolean[] checked) {
+}
+int intelligence(GoL[] el, int el_num) {
+  int go=0;
+  return go;
 }
