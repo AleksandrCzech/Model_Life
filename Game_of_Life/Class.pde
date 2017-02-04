@@ -1,12 +1,12 @@
 class GoL {
-  int x, y, position, goes, size, energy;
+  int x, y, position, size, energy;
+  int goes=0;      //-1 disappear; 0 stays the same; 1-8 movement; 9 proto; 10 bactery; 11 animal
   char type, colony;
   boolean intelligence;
-  GoL(int tx, int ty, int tposition, int tgoes, int tsize, int tenergy, char ttype, char tcolony, boolean tintelligence) {
+  GoL(int tx, int ty, int tposition, int tsize, int tenergy, char ttype, char tcolony, boolean tintelligence) {
     x=tx;
     y=ty;
     position=tposition;
-    goes=tgoes;
     size=tsize;
     energy=tenergy;
     type=ttype;
