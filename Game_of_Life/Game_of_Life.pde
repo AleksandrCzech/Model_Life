@@ -29,6 +29,10 @@ void draw() {       //основной блок
     element[i].display();
   }
   animalCreation(element, checked);
+  bacteryCreation(element, checked);
+  bacteryDying();
+  protoCreation();
+  move();
 }
 void initialize(GoL[] el, int l, char t, char c)       //инициализация системы
 {
@@ -66,22 +70,26 @@ void animalCreation(GoL[] el, boolean[] ischecked) {       //превращен�
     }
   }
 }
-void bacteryCreation(GoL[] el) {       //появлений бактерий
+void bacteryCreation(GoL[] el, boolean[] ischecked) {       //появлений бактерий
   if ((el[2].type=='b')&&(el[41].type=='b')&&(el[42].type=='b')&&(el[2].colony==el[41].colony)&&(el[2].colony==el[42].colony)&&((el[1].type=='e')||(el[1].type=='p'))&&(el[1].goes==0)) {
     el[1].colony=el[2].colony;
     el[1].goes=10;
+    ischecked[1]=true;
   }
   if ((el[39].type=='b')&&(el[80].type=='b')&&(el[79].type=='b')&&(el[39].colony==el[80].colony)&&(el[39].colony==el[79].colony)&&((el[40].type=='e')||(el[40].type=='p'))&&(el[40].goes==0)) {
     el[40].colony=el[39].colony;
     el[40].goes=10;
+    ischecked[40]=true;
   }
   if ((el[1121].type=='b')&&(el[1122].type=='b')&&(el[1162].type=='b')&&(el[1121].colony==el[1122].colony)&&(el[1121].colony==el[1162].colony)&&((el[1161].type=='e')||(el[1161].type=='p'))&&(el[1161].goes==0)) {
     el[1161].colony=el[1162].colony;
     el[1161].goes=10;
+    ischecked[1161]=true;
   }
   if ((el[1159].type=='b')&&(el[1160].type=='b')&&(el[1199].type=='b')&&(el[1159].colony==el[1160].colony)&&(el[1159].colony==el[1199].colony)&&((el[1200].type=='e')||(el[1200].type=='p'))&&(el[1200].goes==0)) {
     el[1200].colony=el[1199].colony;
     el[1200].goes=10;
+    ischecked[1200]=true;
   }
   for (int i=1; i<el.length; i++) {
     if ((i!=1)&&(i!=40)&&(i!=1161)&&(i!=1200)&&((el[i].type=='e')||(el[i].type=='p'))&&(el[i].goes==0)) {
